@@ -1,6 +1,7 @@
 ﻿<krpano version="1.21" title="Virtual Tour">
 
 	<include url="skin/vtourskin.xml" />
+	<plugin nam="toolbox" url="plugins/toolbox/toolboxV2.js" keep="true" preload="true"/>
 
 	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
 	<skin_settings maps="true"
@@ -58,20 +59,8 @@
 	               design_text_shadow="1"
 	               />
 
-	<!--
-	    For an alternative skin design either change the <skin_settings> values 
-	    from above or optionally include one of the predefined designs from below.
-	-->
-	<!-- <include url="skin/vtourskin_design_flat_light.xml"  /> -->
-	<!-- <include url="skin/vtourskin_design_glass.xml"       /> -->
-	<!-- <include url="skin/vtourskin_design_ultra_light.xml" /> -->
-	<!-- <include url="skin/vtourskin_design_117.xml"         /> -->
-	<!-- <include url="skin/vtourskin_design_117round.xml"    /> -->
-	<!-- <include url="skin/vtourskin_design_black.xml"       /> -->
-	
 
-	
-	<scene name="scene_Ciebo-1" title="Ciebo-1" onstart="" thumburl="panos/Ciebo-1.tiles/thumb.jpg" lat="18.49167778" lng="-69.95795278" alt="20.25" heading="0.0">
+		<scene name="scene_Ciebo-1" title="Ciebo-1" onstart="" thumburl="panos/Ciebo-1.tiles/thumb.jpg" lat="18.49167778" lng="-69.95795278" alt="20.25" heading="0.0">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -95,20 +84,6 @@
 
 		<image prealign="0|0.0|0">
 			<cube url="panos/Copey.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
-		</image>
-
-	</scene>
-
-	<scene name="scene_Coroba_Urban" title="Coroba_Urban" onstart="" thumburl="panos/Coroba_Urban.tiles/thumb.jpg" lat="18.49309722" lng="-69.95803333" alt="19.85" heading="0.0">
-		
-		<control bouncinglimits="calc:image.cube ? true : false" />
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
-
-		<preview url="panos/Coroba_Urban.tiles/preview.jpg" />
-
-		<image prealign="0|0.0|0">
-			<cube url="panos/Coroba_Urban.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
 		</image>
 
 	</scene>
@@ -155,20 +130,6 @@
 
 	</scene>
 
-	<scene name="scene_Rosa_de_Bayahibe-2" title="Rosa_de_Bayahibe-2" onstart="" thumburl="panos/Rosa_de_Bayahibe-2.tiles/thumb.jpg" lat="18.48970000" lng="-69.95726944" alt="28.36" heading="0.0">
-		
-		<control bouncinglimits="calc:image.cube ? true : false" />
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
-
-		<preview url="panos/Rosa_de_Bayahibe-2.tiles/preview.jpg" />
-
-		<image prealign="0|0.0|0">
-			<cube url="panos/Rosa_de_Bayahibe-2.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
-		</image>
-
-	</scene>
-
 	<scene name="scene_Rosa_de_Bayahibe-3" title="Rosa_de_Bayahibe-3" onstart="" thumburl="panos/Rosa_de_Bayahibe-3.tiles/thumb.jpg" lat="18.49068333" lng="-69.95873056" alt="23.07" heading="0.0">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
@@ -182,20 +143,5 @@
 		</image>
 
 	</scene>
-
-	<scene name="scene_Rosa_de_Bayahibe" title="Rosa_de_Bayahibe" onstart="" thumburl="panos/Rosa_de_Bayahibe.tiles/thumb.jpg" lat="18.48975278" lng="-69.95731111" alt="20.60" heading="0.0">
-		
-		<control bouncinglimits="calc:image.cube ? true : false" />
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
-
-		<preview url="panos/Rosa_de_Bayahibe.tiles/preview.jpg" />
-
-		<image prealign="0|0.0|0">
-			<cube url="panos/Rosa_de_Bayahibe.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
-		</image>
-
-	</scene>
-
 
 </krpano>
