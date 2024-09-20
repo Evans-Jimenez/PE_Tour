@@ -60,7 +60,7 @@
 	               />
 
 
-		<scene name="scene_Ciebo-1" title="Ciebo-1" onstart="" thumburl="panos/Ciebo-1.tiles/thumb.jpg" lat="18.49167778" lng="-69.95795278" alt="20.25" heading="0.0">
+	<scene name="scene_Ciebo-1" title="Ciebo-1" onstart="" thumburl="panos/Ciebo-1.tiles/thumb.jpg" lat="18.49167778" lng="-69.95795278" alt="20.25" heading="0.0">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
