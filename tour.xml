@@ -85,20 +85,6 @@
 
 	</scene>
 
-	<scene name="scene_Ciebo-2" title="Ciebo-2" onstart="" thumburl="panos/Ciebo-2.tiles/thumb.jpg" lat="18.49167778" lng="-69.95793889" alt="21.70" heading="0.0">
-		
-		<control bouncinglimits="calc:image.cube ? true : false" />
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
-
-		<preview url="panos/Ciebo-2.tiles/preview.jpg" />
-
-		<image prealign="0|0.0|0">
-			<cube url="panos/Ciebo-2.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
-		</image>
-
-	</scene>
-
 	<scene name="scene_Copey" title="Copey" onstart="" thumburl="panos/Copey.tiles/thumb.jpg" lat="18.49293611" lng="-69.95813056" alt="12.79" heading="0.0">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
