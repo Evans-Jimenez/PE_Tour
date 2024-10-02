@@ -28,7 +28,7 @@ El tour incluye imágenes y descripciones detalladas de las siguientes especies:
 ### Instalación y Uso
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/tuusuario/nombre-del-repositorio.git
+   git clone https://github.com/Acrosszawarudo/PE_Tour.git
    ```
 2. Instala las dependencias necesarias (si las hay).
 3. Ejecuta el proyecto localmente o despliega en un servidor web:
@@ -60,8 +60,5 @@ Las contribuciones son bienvenidas. Por favor, sigue los siguientes pasos si des
 3. Realiza los cambios y haz commit (`git commit -m 'Añadir nueva funcionalidad'`).
 4. Haz push a la rama (`git push origin feature-nueva-funcionalidad`).
 5. Abre un Pull Request.
-
-### Licencia
-Este proyecto está bajo la licencia MIT - consulta el archivo [LICENSE](LICENSE) para más detalles.
 
 ---
