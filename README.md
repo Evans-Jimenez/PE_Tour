@@ -1,5 +1,3 @@
----
-
 # Tour Virtual de Flores Endémicas de la República Dominicana
 
 ### Descripción
@@ -68,5 +66,3 @@ Las contribuciones son bienvenidas. Por favor, sigue los siguientes pasos si des
 3. Realiza los cambios y haz commit (`git commit -m 'Añadir nueva funcionalidad'`).
 4. Haz push a la rama (`git push origin feature-nueva-funcionalidad`).
 5. Abre un Pull Request.
-
----
