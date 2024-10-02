@@ -1,6 +1,6 @@
 ---
 
-# Proyecto: Tour Virtual de Flores Endémicas de la República Dominicana
+# Tour Virtual de Flores Endémicas de la República Dominicana
 
 ### Descripción
 Este proyecto es un tour virtual interactivo de flores, árboles y plantas endémicas de la República Dominicana, desarrollado utilizando **krpano**. El objetivo es educar e informar a los usuarios sobre la biodiversidad de la flora del país mediante un recorrido inmersivo y visualmente atractivo.
