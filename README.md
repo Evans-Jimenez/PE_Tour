@@ -38,13 +38,21 @@ El tour incluye imágenes y descripciones detalladas de las siguientes especies:
    
 ### Estructura del Proyecto
 ```
-/tour-virtual-flores-endemicas
+/PE_TOUR
 │
-├── /assets            # Imágenes y modelos 3D
-├── /krpano            # Archivos de configuración y escenas de krpano
-├── index.html         # Página principal
-├── style.css          # Estilos
-└── README.md          # Este archivo
+├── /Carteles          # Imágenes o gráficos informativos del tour
+├── /panos             # Panorámicas utilizadas en el tour virtual
+├── /plugins           # Plugins adicionales de krpano
+├── /skin              # Skins y estilos personalizados
+│
+├── .gitignore         # Archivos y carpetas ignoradas por Git
+├── index.html         # Página principal del tour
+├── README.md          # Este archivo
+├── tour_testingserver_macos  # Servidor de prueba para macOS
+├── tour_testingserver.exe    # Servidor de prueba para Windows
+├── tour.js            # Archivo JavaScript para el tour
+├── tour.xml           # Archivo de configuración principal del tour (krpano)
+└── waves.png          # Imagen utilizada en el tour
 ```
 
 ### Próximos Pasos
