@@ -59,18 +59,133 @@
 	               design_text_shadow="1"
 	               />
 
+	<action name="scene3dtransition" scope="local" args="scenename, hlookatoffset">
+		motionblur = 0.5;
+		transitiondelay = 0.0;
+		transitiontime = 0.5;
+		transitiontweentype = "easeoutquad";
+		
+		if(caller AND caller.ishotspot,
+			<!-- called from a hotspot, move toward the hotspot -->
+			if(caller.depth == 0,
+				<!-- 3d placed hotspot -->
+				set3dtransition("image", caller.tx,caller.ty,caller.tz, motionblur, hlookatoffset, transitiondelay, transitiontime, transitiontweentype);
+			  ,
+				<!-- a hotspot with a spherical position -->
+				caller.getcenter(h,v);
+				if(v GT -50 AND v LT +50 AND caller.depth GT 120, set(v,0));
+				set3dtransition("sphere", h,v,(min(caller.depth,1000)), motionblur, hlookatoffset, transitiondelay, transitiontime, transitiontweentype);
+			);
+		  ,
+			<!-- called from a layer or a script, recenter at the new pano center (3d-model/depthmap panos only) -->
+			if(image.depthmap.url,
+				set3dtransition("image", 0,0,0, motionblur, hlookatoffset, transitiondelay, transitiontime, transitiontweentype);
+			);
+		);
+		
+		loadscene(get(scenename), null, MERGE, BLEND(get(transitiontime),get(transitiontweentype)));
+	</action>
 
-	<scene name="scene_Ciebo-1" title="Ciebo-1" onstart="" thumburl="panos/Ciebo-1.tiles/thumb.jpg" lat="18.49167778" lng="-69.95795278" alt="20.25" heading="0.0">
+	<action name="do_crop_animation" scope="local" args="framewidth, frameheight, framerate">
+		<!-- define local variables -->
+		calc(local.xframes, (caller.imagewidth /framewidth) BOR 0);
+		calc(local.frames, xframes * ((caller.imageheight / frameheight) BOR 0));
+		def(local.frame, integer, 0);
+		
+		<!-- set the first frame -->
+		calc(caller.crop, '0|0|' + framewidth + '|' + frameheight);
+		
+		<!-- do the animation -->
+		setinterval(calc('crop_anim_' + caller.name), calc(1.0 / framerate),
+			if(caller.loaded,
+				inc(frame);
+				if(frame GE frames, if(caller.onlastframe !== null, callwith(caller, onlastframe() ) ); set(frame,0); );
+				mod(xpos, frame, xframes);
+				div(ypos, frame, xframes);
+				Math.floor(ypos);
+				mul(xpos, framewidth);
+				mul(ypos, frameheight);
+				calc(caller.crop, xpos + '|' + ypos + '|' + framewidth + '|' + frameheight);
+			  ,
+				<!-- stop the interval when the hotspot gets removed -->
+				clearinterval(calc('crop_anim_' + caller.name));
+			);
+		);
+	</action>
+
+<!-- use a <style> to share the same attriubtes for all hotspots -->
+	<style name="flyoutimage"
+	       renderer="webgl"
+	       distorted="true"
+	       flying="0.0"
+	       backup_state=""
+	       backup_zorder=""
+	       flying_state="in"
+	       capture="true"
+	       onclick="flyout_hotspot()"
+	       />
+
+
+	<!-- flyout hotspot actions -->
+	<action name="flyout_hotspot">
+		for(set(i,0), i LT hotspot.count, inc(i),
+			copy(hs, hotspot[get(i)]);
+			if(hs.name != name AND hs.style == 'flyoutimage' AND (hs.flying_state == 'out' OR hs.flying_state == 'flyingout'),
+				callwith(hs, flyout_hotspot() );
+			  );
+		  );
+
+
+		if(flying_state == 'flyingout',
+			set(flying_state, 'flyingin');
+		  ,
+			if(flying_state == 'flyingin',
+				set(flying_state, 'flyingout');
+		  	  );
+		  );
+
+		if(flying_state == 'in',
+			calc(backup_state, '0.0|' + rx + '|' + ry + '|' + rz + '|' + scale);
+			copy(backup_zorder, zorder);
+			set(flying_state, 'flyingout');
+		  );
+
+		if(flying_state == 'out',
+			set(flying_state, 'flyingin');
+		  );
+
+		if(flying_state == 'flyingout',
+			set(zorder, 99);
+			tween(flying|rx|ry|rz|scale, ('1.0|0.0|0.0|0.0|'+0.9*min(stagewidth/sourcewidth,stageheight/sourceheight)), 0.5, default, set(flying_state,'out'); );
+		  );
+
+		if(flying_state == 'flyingin',
+			sub(zorder,1);
+			tween(flying|rx|ry|rz|scale, get(backup_state), 0.5, default, set(flying_state,'in'); copy(zorder,backup_zorder); );
+		  );
+	</action>
+
+	<scene name="scene_Cieba" title="Cieba" onstart="" thumburl="panos/Cieba.tiles/thumb.jpg" lat="18.49167778" lng="-69.95795278" alt="20.25" heading="0.0">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
 		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
-		<preview url="panos/Ciebo-1.tiles/preview.jpg" />
+		<preview url="panos/Cieba.tiles/preview.jpg" />
 
 		<image prealign="0|0.0|0">
-			<cube url="panos/Ciebo-1.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
+			<cube url="panos/Cieba.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
 		</image>
+
+		<hotspot name="spot1" url="waves.png" onloaded="do_crop_animation(128,128, 15);" ath="-169.2708189" atv="4.1756912" onclick="scene3dtransition(scene_Cubanola-1);" scale="0.25" zoom="true" />
+
+		<hotspot name="spot7" style="flyoutimage"
+				url="Carteles/CartelCeiba.png"
+				zorder="1"
+				ath="-12.3831709"
+				atv="6.2321492"
+				scale="0.4"
+				/>
 
 	</scene>
 
@@ -86,6 +201,16 @@
 			<cube url="panos/Copey.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
 		</image>
 
+		<hotspot name="spot3" url="waves.png" onloaded="do_crop_animation(128,128, 15);" ath="-169.2708189" atv="4.1756912" onclick="scene3dtransition(scene_Lengua_de_Buey);" scale="0.25" zoom="true" />
+
+		<hotspot name="spot8" style="flyoutimage"
+				url="Carteles/CartelCopey.png"
+				zorder="1"
+				ath="-37.5274720"
+				atv="3.2317583"
+				scale="0.4"
+				/>
+
 	</scene>
 
 	<scene name="scene_Cubanola-1" title="Cubanola-1" onstart="" thumburl="panos/Cubanola-1.tiles/thumb.jpg" lat="18.49170833" lng="-69.95808333" alt="19.54" heading="0.0">
@@ -99,6 +224,16 @@
 		<image prealign="0|0.0|0">
 			<cube url="panos/Cubanola-1.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
 		</image>
+
+		<hotspot name="spot2" url="waves.png" onloaded="do_crop_animation(128,128, 15);" ath="-169.2708189" atv="4.1756912" onclick="scene3dtransition(scene_Cubanola-2);" scale="0.25" zoom="true" />
+
+		<hotspot name="spot9" style="flyoutimage"
+				url="Carteles/CartelCubanola.png"
+				zorder="1"
+				ath="-1.2234610"
+				atv="21.3226290"
+				scale="0.4"
+				/>
 
 	</scene>
 
@@ -114,6 +249,16 @@
 			<cube url="panos/Cubanola-2.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
 		</image>
 
+		<hotspot name="spot4" url="waves.png" onloaded="do_crop_animation(128,128, 15);" ath="-169.2708189" atv="4.1756912" onclick="scene3dtransition(scene_Copey);" scale="0.25" zoom="true" />
+
+		<hotspot name="spot9.5" style="flyoutimage"
+				url="Carteles/CartelCubanola.png"
+				zorder="1"
+				ath="32.7722398"
+				atv="8.7443004"
+				scale="0.4"
+				/>
+
 	</scene>
 
 	<scene name="scene_Lengua_de_Buey" title="Lengua_de_Buey" onstart="" thumburl="panos/Lengua_de_Buey.tiles/thumb.jpg" lat="18.49300000" lng="-69.95795833" alt="21.80" heading="0.0">
@@ -128,19 +273,40 @@
 			<cube url="panos/Lengua_de_Buey.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
 		</image>
 
+		<hotspot name="spot5" url="waves.png" onloaded="do_crop_animation(128,128, 15);" ath="-169.2708189" atv="4.1756912" onclick="scene3dtransition(scene_Rosa_de_Bayahibe);" scale="0.25" zoom="true" />
+
+		<hotspot name="spot10" style="flyoutimage"
+				url="Carteles/CartelLenguaDeBuey.png"
+				zorder="1"
+				ath="64.4089450"
+				atv="17.5475832"
+				scale="0.4"
+				/>
+
 	</scene>
 
-	<scene name="scene_Rosa_de_Bayahibe-3" title="Rosa_de_Bayahibe-3" onstart="" thumburl="panos/Rosa_de_Bayahibe-3.tiles/thumb.jpg" lat="18.49068333" lng="-69.95873056" alt="23.07" heading="0.0">
+	<scene name="scene_Rosa_de_Bayahibe" title="Rosa_de_Bayahibe" onstart="" thumburl="panos/Rosa_de_Bayahibe.tiles/thumb.jpg" lat="18.49068333" lng="-69.95873056" alt="23.07" heading="0.0">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
 		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
-		<preview url="panos/Rosa_de_Bayahibe-3.tiles/preview.jpg" />
+		<preview url="panos/Rosa_de_Bayahibe.tiles/preview.jpg" />
 
 		<image prealign="0|0.0|0">
-			<cube url="panos/Rosa_de_Bayahibe-3.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
+			<cube url="panos/Rosa_de_Bayahibe.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
 		</image>
+
+		<hotspot name="spot6" url="waves.png" onloaded="do_crop_animation(128,128, 15);" ath="-169.2708189" atv="4.1756912" onclick="scene3dtransition(scene_Cieba);" scale="0.25" zoom="true" />
+
+		<hotspot name="spot11" style="flyoutimage"
+				url="Carteles/CartelBayahibe.png"
+				zorder="1"
+				ath="-6.1752412"
+				atv="26.5636011"
+				scale="0.4"
+				/>
+
 
 	</scene>
 
