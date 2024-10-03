@@ -3,6 +3,60 @@
 	<include url="skin/vtourskin.xml" />
 	<plugin nam="toolbox" url="plugins/toolbox/toolboxV2.js" keep="true" preload="true"/>
 
+	<layer name="intro"
+		type="container"
+		keep="true"
+		width="100%"
+		height="100%"
+		bgcolor="0x000000"
+		bgalpha="0.8"
+		zorder="9999"
+		enabled="true"
+		bgcapture="true"
+		vr="true"
+		onloaded="on_intro_loaded()"
+		onclick="on_intro_click()">
+		<layer name="intro_logo"
+			url="skin/logo.png"
+			align="center"
+			y="-70"
+			scale="0.2"
+			enabled="false"
+			alpha="0"
+			vr="true"
+		/>
+		<layer name="intro_guide"
+			url="skin/help_desktop.png"
+			align="center" y="80"
+			scale="1"
+			enabled="false"
+			alpha="0"
+			vr="true"
+		/>
+	</layer>
+
+	<layer name="creditos" url="recursos/creditos.png" keep="true" enabled="true" align="centercenter" x="0" y="0" visible="false" alpha="1" scale="0.6" scale.mobile="0.2" onclick="set(layer[creditos].visible,false);"/>
+	<layer name="botoncreditos" url="recursos/botoncreditos.png" keep="true" enabled="true" align="leftbottom" x="10" y="5" scale="0.4" scale.mobile="0.2" onclick="set(layer[creditos].visible,true);"/>
+	<action name="flyout_hotspot"> for(set(i,0), i LT hotspot.count, inc(i), copy(hs, hotspot[get(i)]); if(hs.name != name AND hs.style == 'flyoutimage' AND (hs.flying_state == 'out' OR hs.flying_state == 'flyingout'), callwith(hs, flyout_hotspot() ); ); ); if(flying_state == 'flyingout', set(flying_state, 'flyingin'); , if(flying_state == 'flyingin', set(flying_state, 'flyingout'); ); ); if(flying_state == 'in', calc(backup_state, '0.0|' + rx + '|' + ry + '|' + rz + '|' + scale); copy(backup_zorder, zorder); set(flying_state, 'flyingout'); ); if(flying_state == 'out', set(flying_state, 'flyingin'); ); if(flying_state == 'flyingout', set(zorder, 99); tween(alpha, 1,2); tween(flying|rx|ry|rz|scale, '0.0|0.0|0.0|0.0|1.0',2, default, set(flying_state,'out'); set(capture,true); ); ); if(flying_state == 'flyingout' AND webvr.isenabled, set(zorder, 99); tween(alpha, 1 ,2); tween(flying|rx|ry|rz|scale, '1.0|0.0|0.0|0.0|0.3',2, default, set(flying_state,'in'); set(capture,true); ); delayedcall(6.0, set(visible, false); ); ); if(flying_state == 'flyingin', sub(zorder,1); tween(alpha, 0 ,2); set(capture,false); tween(flying|rx|ry|rz|scale, get(backup_state), 1, default, set(flying_state,'in'); copy(zorder,backup_zorder); ); ); if(flying_state == 'flyingin' AND webvr.isenabled, sub(zorder,1); tween(alpha, 0 ,2); set(capture,false); tween(flying|rx|ry|rz|scale, get(backup_state), 1, default, set(flying_state,'in'); copy(zorder,backup_zorder); ); ); </action>
+
+	<action name="on_intro_click">
+		tween(layer[intro].alpha, 0);
+		set(layer[intro].enabled, false);
+		set(hotspot[Bienvenido].visible, true);
+		set(hotspot[Creditos].visible, true);
+		set(hotspot[Creditos].alpha, 1);
+		set(hotspot[Bienvenido].alpha, 1);
+	</action>
+
+	<action name="on_intro_loaded">
+		set(hotspot[spot11].visible, false);
+		set(hotspot[spot6].visible, false);
+		delayedcall(2,
+		tween(layer[intro_logo].alpha, 1);
+		tween(layer[intro_guide].alpha, 1);
+		);
+	</action>
+
 	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
 	<skin_settings maps="true"
 	               maps_type="google"
@@ -16,7 +70,7 @@
 	               webvr_keeplookingdirection="true"
 	               webvr_prev_next_hotspots="true"
 	               autotour="false"
-	               littleplanetintro="false"
+	               littleplanetintro="true"
 	               followmousecontrol="false"
 	               title="true"
 	               thumbs="true"
@@ -179,6 +233,30 @@
 
 		<hotspot name="spot6" url="waves.png" style="skin_animated_hotspot" onloaded="do_crop_animation(128,128, 15);" ath="-169.2708189" atv="4.1756912" linkedscene="scene_Cieba" linkedscene_lookat="-11.54007634,1.84297115,120.0" scale="0.25" zoom="true" />
 
+		<action name="ocultar">
+			tween(hotspot[Bienvenido].alpha, 0.0, 1.5);
+			tween(hotspot[Creditos].alpha, 0.0, 1.5);
+			set(hotspot[Creditos].enabled, false);
+			set(hotspot[Bienvenido].enabled, false);
+			set(hotspot[spot11].visible, true);
+			set(hotspot[spot6].visible, true);
+			set(hotspot[Creditos].keep, true);
+			set(hotspot[Bienvenido].keep, true);
+		</action>
+
+		<hotspot name="Bienvenido"
+			type="image"
+			url="recursos/introduccion.png"
+			ath="0"
+			atv="0"
+			depth="1800"
+			rx="0" ry="0" rz="0"
+			ox="0.0" oy="0.0"
+			tx="0" ty="0" tz="0"
+			visible="false"
+			distorted="true"
+			onclick="ocultar();" />
+		
 		<hotspot name="spot11" style="flyoutimage"
 				url="Carteles/CartelBayahibe.png"
 				zorder="1"
