@@ -140,33 +140,6 @@
 		loadscene(get(scenename), null, MERGE, BLEND(get(transitiontime),get(transitiontweentype)));
 	</action>
 
-	<action name="do_crop_animation" scope="local" args="framewidth, frameheight, framerate">
-		<!-- define local variables -->
-		calc(local.xframes, (caller.imagewidth /framewidth) BOR 0);
-		calc(local.frames, xframes * ((caller.imageheight / frameheight) BOR 0));
-		def(local.frame, integer, 0);
-		
-		<!-- set the first frame -->
-		calc(caller.crop, '0|0|' + framewidth + '|' + frameheight);
-		
-		<!-- do the animation -->
-		setinterval(calc('crop_anim_' + caller.name), calc(1.0 / framerate),
-			if(caller.loaded,
-				inc(frame);
-				if(frame GE frames, if(caller.onlastframe !== null, callwith(caller, onlastframe() ) ); set(frame,0); );
-				mod(xpos, frame, xframes);
-				div(ypos, frame, xframes);
-				Math.floor(ypos);
-				mul(xpos, framewidth);
-				mul(ypos, frameheight);
-				calc(caller.crop, xpos + '|' + ypos + '|' + framewidth + '|' + frameheight);
-			  ,
-				<!-- stop the interval when the hotspot gets removed -->
-				clearinterval(calc('crop_anim_' + caller.name));
-			);
-		);
-	</action>
-
 <!-- use a <style> to share the same attriubtes for all hotspots -->
 	<style name="flyoutimage"
 	       renderer="webgl"
@@ -231,7 +204,7 @@
 			<cube url="panos/Rosa_de_Bayahibe.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
 		</image>
 
-		<hotspot name="spot6" url="waves.png" style="skin_animated_hotspot" onloaded="do_crop_animation(128,128, 15);" ath="-169.2708189" atv="4.1756912" linkedscene="scene_Cieba" linkedscene_lookat="-11.54007634,1.84297115,120.0" scale="0.25" zoom="true" />
+		<hotspot name="spot6" style="waves" ath="-169.2708189" atv="4.1756912" linkedscene="scene_Cieba" linkedscene_lookat="-11.54007634,1.84297115,120.0" scale="0.25" zoom="true" />
 
 		<action name="ocultar">
 			tween(hotspot[Bienvenido].alpha, 0.0, 1.5);
@@ -279,7 +252,7 @@
 			<cube url="panos/Cieba.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
 		</image>
 
-		<hotspot name="spot1" url="waves.png" onloaded="do_crop_animation(128,128, 15);" ath="-169.2708189" atv="4.1756912" onclick="scene3dtransition(scene_Cubanola-1);" scale="0.25" zoom="true" />
+		<hotspot name="spot1" style="waves"  ath="-169.2708189" atv="4.1756912" linkedscene="scene_Cubanola-1" scale="0.25" zoom="true" />
 
 		<hotspot name="spot7" style="flyoutimage"
 				url="Carteles/CartelCeiba.png"
@@ -303,7 +276,7 @@
 			<cube url="panos/Copey.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
 		</image>
 
-		<hotspot name="spot3" url="waves.png" onloaded="do_crop_animation(128,128, 15);" ath="-169.2708189" atv="4.1756912" onclick="scene3dtransition(scene_Lengua_de_Buey);" scale="0.25" zoom="true" />
+		<hotspot name="spot3" style="waves"  ath="-169.2708189" atv="4.1756912" linkedscene="scene_Lengua_de_Buey" scale="0.25" zoom="true" />
 
 		<hotspot name="spot8" style="flyoutimage"
 				url="Carteles/CartelCopey.png"
@@ -327,7 +300,7 @@
 			<cube url="panos/Cubanola-1.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
 		</image>
 
-		<hotspot name="spot2" url="waves.png" onloaded="do_crop_animation(128,128, 15);" ath="-169.2708189" atv="4.1756912" onclick="scene3dtransition(scene_Lengua_de_Buey);" scale="0.25" zoom="true" />
+		<hotspot name="spot2" style="waves"  ath="-169.2708189" atv="4.1756912" linkedscene="scene_Lengua_de_Buey" scale="0.25" zoom="true" />
 
 		<hotspot name="spot9" style="flyoutimage"
 				url="Carteles/CartelCubanola.png"
@@ -351,7 +324,7 @@
 			<cube url="panos/Lengua_de_Buey.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
 		</image>
 
-		<hotspot name="spot5" url="waves.png" onloaded="do_crop_animation(128,128, 15);" ath="-169.2708189" atv="4.1756912" onclick="scene3dtransition(scene_Rosa_de_Bayahibe);" scale="0.25" zoom="true" />
+		<hotspot name="spot5" style="waves"  ath="-169.2708189" atv="4.1756912" linkedscene="scene_Rosa_de_Bayahibe" scale="0.25" zoom="true" />
 
 		<hotspot name="spot10" style="flyoutimage"
 				url="Carteles/CartelLenguaDeBuey.png"
