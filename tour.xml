@@ -177,7 +177,7 @@
 			<cube url="panos/Rosa_de_Bayahibe.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
 		</image>
 
-		<hotspot name="spot6" url="waves.png" onloaded="do_crop_animation(128,128, 15);" ath="-169.2708189" atv="4.1756912" onclick="scene3dtransition(scene_Cieba);" scale="0.25" zoom="true" />
+		<hotspot name="spot6" url="waves.png" style="skin_animated_hotspot" onloaded="do_crop_animation(128,128, 15);" ath="-169.2708189" atv="4.1756912" linkedscene="scene_Cieba" linkedscene_lookat="-11.54007634,1.84297115,120.0" scale="0.25" zoom="true" />
 
 		<hotspot name="spot11" style="flyoutimage"
 				url="Carteles/CartelBayahibe.png"
@@ -249,37 +249,13 @@
 			<cube url="panos/Cubanola-1.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
 		</image>
 
-		<hotspot name="spot2" url="waves.png" onloaded="do_crop_animation(128,128, 15);" ath="-169.2708189" atv="4.1756912" onclick="scene3dtransition(scene_Cubanola-2);" scale="0.25" zoom="true" />
+		<hotspot name="spot2" url="waves.png" onloaded="do_crop_animation(128,128, 15);" ath="-169.2708189" atv="4.1756912" onclick="scene3dtransition(scene_Lengua_de_Buey);" scale="0.25" zoom="true" />
 
 		<hotspot name="spot9" style="flyoutimage"
 				url="Carteles/CartelCubanola.png"
 				zorder="1"
 				ath="-1.2234610"
 				atv="21.3226290"
-				scale="0.4"
-				/>
-
-	</scene>
-
-	<scene name="scene_Cubanola-2" title="Cubanola-2" onstart="" thumburl="panos/Cubanola-2.tiles/thumb.jpg" lat="18.49310556" lng="-69.95832500" alt="17.88" heading="0.0">
-		
-		<control bouncinglimits="calc:image.cube ? true : false" />
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
-
-		<preview url="panos/Cubanola-2.tiles/preview.jpg" />
-
-		<image prealign="0|0.0|0">
-			<cube url="panos/Cubanola-2.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
-		</image>
-
-		<hotspot name="spot4" url="waves.png" onloaded="do_crop_animation(128,128, 15);" ath="-169.2708189" atv="4.1756912" onclick="scene3dtransition(scene_Copey);" scale="0.25" zoom="true" />
-
-		<hotspot name="spot9.5" style="flyoutimage"
-				url="Carteles/CartelCubanola.png"
-				zorder="1"
-				ath="32.7722398"
-				atv="8.7443004"
 				scale="0.4"
 				/>
 
