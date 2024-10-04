@@ -219,7 +219,7 @@
 
 		<hotspot name="Bienvenido"
 			type="image"
-			url="recursos/introduccion.png"
+			url="recursos/introduccion-tour.png"
 			ath="0"
 			atv="0"
 			depth="1800"
