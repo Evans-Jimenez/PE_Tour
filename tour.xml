@@ -252,7 +252,7 @@
 			<cube url="panos/Cieba.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
 		</image>
 
-		<hotspot name="spot1" style="waves"  ath="-169.2708189" atv="4.1756912" linkedscene="scene_Cubanola-1" scale="0.25" zoom="true" />
+		<hotspot name="spot1" style="waves"  ath="-169.2708189" atv="4.1756912" linkedscene="scene_Cubanola" scale="0.25" zoom="true" />
 
 		<hotspot name="spot7" style="flyoutimage"
 				url="Carteles/CartelCeiba.png"
@@ -288,19 +288,19 @@
 
 	</scene>
 
-	<scene name="scene_Cubanola-1" title="Cubanola-1" onstart="" thumburl="panos/Cubanola-1.tiles/thumb.jpg" lat="18.49170833" lng="-69.95808333" alt="19.54" heading="0.0">
+	<scene name="scene_Cubanola" title="Cubanola" onstart="" thumburl="panos/Cubanola.tiles/thumb.jpg" lat="18.49170833" lng="-69.95808333" alt="19.54" heading="0.0">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
 		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
-		<preview url="panos/Cubanola-1.tiles/preview.jpg" />
+		<preview url="panos/Cubanola.tiles/preview.jpg" />
 
 		<image prealign="0|0.0|0">
-			<cube url="panos/Cubanola-1.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
+			<cube url="panos/Cubanola.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
 		</image>
 
-		<hotspot name="spot2" style="waves"  ath="-169.2708189" atv="4.1756912" linkedscene="scene_Lengua_de_Buey" scale="0.25" zoom="true" />
+		<hotspot name="spot2" style="waves"  ath="-169.2708189" atv="4.1756912" linkedscene="scene_Lengua_de_Buey" linkedscene_lookat="63.32488568,10.48618995,120.0" scale="0.25" zoom="true" />
 
 		<hotspot name="spot9" style="flyoutimage"
 				url="Carteles/CartelCubanola.png"
