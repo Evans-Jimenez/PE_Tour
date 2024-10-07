@@ -51,6 +51,7 @@
 	<action name="on_intro_loaded">
 		set(hotspot[spot11].visible, false);
 		set(hotspot[spot6].visible, false);
+		set(hotspot[Boton-CartelBayahibe].visible, false)
 		delayedcall(2,
 		tween(layer[intro_logo].alpha, 1);
 		tween(layer[intro_guide].alpha, 1);
@@ -215,6 +216,7 @@
 			set(hotspot[spot6].visible, true);
 			set(hotspot[Creditos].keep, true);
 			set(hotspot[Bienvenido].keep, true);
+			set(hotspot[Boton-CartelBayahibe].visible, true)
 		</action>
 
 		<hotspot name="Bienvenido"
@@ -246,23 +248,21 @@
             set(hotspot[CartelBayahibe].visible,true);
         "/>
 
-<hotspot name="CartelBayahibe" 
-         url="Carteles/CartelBayahibe.png" 
-         visible="false" 
-         ath="-6.1752412" 
-         atv="26.5636011" 
-         alpha="0"   
-         scale="0.8" 
-         scale.mobile="0.2" 
-         onclick="
-            set(hotspot[Boton-CartelBayahibe].enabled, false);  
-            tween(hotspot[CartelBayahibe].alpha, 0, 1);  
-            tween(hotspot[Boton-CartelBayahibe].alpha, 1, 1);  
-            tween(hotspot[Boton-CartelBayahibe].ath, -6.1752412, 1);  
-            set(hotspot[CartelBayahibe].visible,false);  
-            set(hotspot[Boton-CartelBayahibe].enabled, true);  
-            set(hotspot[Boton-CartelBayahibe].visible,true);
-        "/>
+		<hotspot name="CartelBayahibe" 
+				url="Carteles/CartelBayahibe.png" 
+				visible="false" 
+				ath="-6.1752412" 
+				atv="26.5636011" 
+				alpha="0"   
+				scale="0.8" 
+				scale.mobile="0.2" 
+				onclick="
+					tween(hotspot[CartelBayahibe].alpha, 0, 1);  
+					tween(hotspot[Boton-CartelBayahibe].alpha, 1, 1);  
+					tween(hotspot[Boton-CartelBayahibe].ath, -6.1752412, 1);
+					delayedcall(1, set(hotspot[CartelBayahibe].visible,false));  
+					set(hotspot[Boton-CartelBayahibe].visible,true); 
+				"/>
 
 
 
