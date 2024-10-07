@@ -51,6 +51,7 @@
 	<action name="on_intro_loaded">
 		set(hotspot[spot11].visible, false);
 		set(hotspot[spot6].visible, false);
+		set(hotspot[Boton-CartelBayahibe].visible, false)
 		delayedcall(2,
 		tween(layer[intro_logo].alpha, 1);
 		tween(layer[intro_guide].alpha, 1);
@@ -215,6 +216,7 @@
 			set(hotspot[spot6].visible, true);
 			set(hotspot[Creditos].keep, true);
 			set(hotspot[Bienvenido].keep, true);
+			set(hotspot[Boton-CartelBayahibe].visible, true)
 		</action>
 
 		<hotspot name="Bienvenido"
@@ -257,7 +259,7 @@
 					tween(hotspot[Boton-CartelBayahibe].alpha, 1, 1);  
 					tween(hotspot[Boton-CartelBayahibe].ath, -6.1752412, 1);
 					delayedcall(1, set(hotspot[CartelBayahibe].visible,false));  
-					set(hotspot[Boton-CartelBayahibe].visible,true); 
+					set(hotspot[Boton-CartelBayahibe].visible,true);
 				"/>
 
 	</scene>
