@@ -244,8 +244,6 @@
 					tween(hotspot[CartelBayahibe].alpha, 1, 1);  
 					delayedcall(1, set(hotspot[Boton-CartelBayahibe].visible,false));  
 					set(hotspot[CartelBayahibe].visible,true);  
-					set(hotspot[CartelBayahibe].enabled,true);
-					set(hotspot[Boton-CartelBayahibe].enabled,false);
 				"/>
 
 		<hotspot name="CartelBayahibe" 
@@ -262,8 +260,6 @@
 					tween(hotspot[Boton-CartelBayahibe].ath, -6.1752412, 1);
 					delayedcall(1, set(hotspot[CartelBayahibe].visible,false));  
 					set(hotspot[Boton-CartelBayahibe].visible,true);
-					set(hotspot[Boton-CartelBayahibe].enabled,true); 
-					set(hotspot[CartelBayahibe].enabled,false);
 				"/>
 
 	</scene>
