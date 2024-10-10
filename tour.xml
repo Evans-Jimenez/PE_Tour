@@ -193,9 +193,6 @@
 		 tx="0" ty="0" tz="0"
          scale.mobile="0.2" 
 		 distorted="true"
-		 rx="0" ry="0" rz="0"
-		 ox="0.0" oy="0.0"
-		 tx="0" ty="0" tz="0"
          onclick="
             set(hotspot[Boton-CartelBayahibe].enabled, false);  
             set(hotspot[CartelBayahibe].enabled, false); 
@@ -220,9 +217,6 @@
          alpha="0"   
          scale="0.8" 
 		 distorted="true"
-		 rx="0" ry="0" rz="0"
-		 ox="0.0" oy="0.0"
-		tx="0" ty="0" tz="0"
          scale.mobile="0.2" 
          onclick="
             set(hotspot[CartelBayahibe].enabled, false); 
