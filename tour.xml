@@ -35,17 +35,23 @@
 		/>
 	</layer>
 
+	<hotspot name="nadirlogo" keep="true"
+		url="recursos/vtourskin_nadir2.png"
+		ath="0"
+		atv="90"
+		distorted="true"
+		scale="3"
+		rotate="0.0"
+		alpha="0.9"
+		onclick="openurl('https://refodige.intec.edu.do/');"
+	/>
+
+	<!-- onviewchange event - update logo rotation on pano rotation -->
+	<events name="nadirlogo" keep="true"
+		onviewchange="copy(hotspot[nadirlogo].rotate, view.hlookat);" />
+
 	<layer name="creditos" url="recursos/creditos.png" keep="true" enabled="true" align="centercenter" x="0" y="0" visible="false" alpha="1" scale="0.6" scale.mobile="0.2" onclick="set(layer[creditos].visible,false);"/>
 	<layer name="botoncreditos" url="recursos/botoncreditos.png" keep="true" enabled="true" align="leftbottom" x="10" y="5" scale="0.4" scale.mobile="0.2" onclick="set(layer[creditos].visible,true);"/>
-	
-	<action name="on_intro_click">
-		tween(layer[intro].alpha, 0);
-		set(layer[intro].enabled, false);
-		set(hotspot[Bienvenido].visible, true);
-		set(hotspot[Creditos].visible, true);
-		set(hotspot[Creditos].alpha, 1);
-		set(hotspot[Bienvenido].alpha, 1);
-	</action>
 
 	<action name="on_intro_loaded">
 		set(hotspot[spot1].visible, false);
@@ -53,10 +59,21 @@
 		set(hotspot[spot6].visible, false);
 		set(hotspot[spot10].visible, false);
 		set(hotspot[Boton-CartelBayahibe].visible, false);
+		set(hotspot[nadirlogo].visible, false);
 		delayedcall(2,
 		tween(layer[intro_logo].alpha, 1);
 		tween(layer[intro_guide].alpha, 1);
 		);
+	</action>
+
+	<action name="on_intro_click">
+		tween(layer[intro].alpha, 0);
+		set(layer[intro].enabled, false);
+		set(hotspot[Bienvenido].visible, true);
+		set(hotspot[Creditos].visible, true);
+		set(hotspot[Creditos].alpha, 1);
+		set(hotspot[Bienvenido].alpha, 1);
+		set(hotspot[nadirlogo].visible, true);
 	</action>
 
 	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
@@ -253,6 +270,7 @@
 		 rx="0" ry="0" rz="0"
 		 ox="0.0" oy="0.0"
 		 tx="0" ty="0" tz="0"
+		 distorted="true"
          scale.mobile="0.2" 
          onclick="
             set(hotspot[Boton-CartelCeiba].enabled, false);  
@@ -277,6 +295,7 @@
 		 tx="0" ty="0" tz="0"
          alpha="0"   
          scale="0.8" 
+		 distorted="true"
          scale.mobile="0.2" 
          onclick="
             set(hotspot[CartelCeiba].enabled, false); 
@@ -313,6 +332,7 @@
 		 rx="0" ry="0" rz="0"
 		 ox="0.0" oy="0.0"
 		 tx="0" ty="0" tz="0"
+		 distorted="true"
          scale.mobile="0.2" 
          onclick="
             set(hotspot[Boton-CartelCubanola].enabled, false);  
@@ -335,6 +355,7 @@
 		 rx="0" ry="0" rz="0"
 		 ox="0.0" oy="0.0"
 		 tx="0" ty="0" tz="0"
+		 distorted="true"
          alpha="0"   
          scale="0.8" 
          scale.mobile="0.2" 
@@ -373,6 +394,7 @@
 		 rx="0" ry="0" rz="0"
 		 ox="0.0" oy="0.0"
 		 tx="0" ty="0" tz="0"
+		 distorted="true"
          scale.mobile="0.2" 
          onclick="
             set(hotspot[Boton-CartelCopey].enabled, false);  
@@ -395,6 +417,7 @@
 		 rx="0" ry="0" rz="0"
 		 ox="0.0" oy="0.0"
 		 tx="0" ty="0" tz="0"
+		 distorted="true"
          alpha="0"   
          scale="0.8" 
          scale.mobile="0.2" 
@@ -433,6 +456,7 @@
 		 rx="0" ry="0" rz="0"
 		 ox="0.0" oy="0.0"
 		 tx="0" ty="0" tz="0"
+		 distorted="true"
          scale.mobile="0.2" 
          onclick="
             set(hotspot[Boton-CartelLenguaDeBuey].enabled, false);  
@@ -455,6 +479,7 @@
 		 rx="0" ry="0" rz="0"
 		 ox="0.0" oy="0.0"
 		 tx="0" ty="0" tz="0"
+		 distorted="true"
          alpha="0"   
          scale="0.8" 
          scale.mobile="0.2" 
