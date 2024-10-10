@@ -394,7 +394,7 @@
 		</image>
 
 		<hotspot name="spot3" style="waves" ath="-110.0299969" atv="13.2692919" linkedscene="scene_Lengua_de_Buey" linkedscene_lookat="63.32488568,10.48618995,120.0" scale="0.25" zoom="true" />
-		<hotspot name="spot9" style="waves" ath="-159.8691518" atv="3.5462575" linkedscene="scene_Cubanola" scale="0.25" zoom="true" />
+		<hotspot name="spot9" style="waves" ath="165.6755015" atv="11.5543905" linkedscene="scene_Cubanola" scale="0.25" zoom="true" />
 
 		<hotspot name="Boton-CartelCopey" 
          url="Carteles/Boton-CartelCopey.png" 
