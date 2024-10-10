@@ -206,7 +206,9 @@
 			<cube url="panos/Rosa_de_Bayahibe.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
 		</image>
 
-		<hotspot name="spot6" style="waves" ath="-169.2708189" atv="4.1756912" linkedscene="scene_Cieba" linkedscene_lookat="-11.54007634,1.84297115,120.0" scale="0.25" zoom="true" />
+		<hotspot name="spot6" style="waves" ath="-96.0712749" atv="2.2675708" linkedscene="scene_Cieba" linkedscene_lookat="-11.54007634,1.84297115,120.0" scale="0.25" zoom="true" />
+		<hotspot name="spot10" style="waves" ath="92.4435520" atv="9.4260491" linkedscene="scene_Lengua_de_Buey" linkedscene_lookat="63.32488568,10.48618995,120.0" scale="0.25" zoom="true" />
+		
 
 		<action name="ocultar">
 			tween(hotspot[Bienvenido].alpha, 0.0, 1.5);
@@ -239,33 +241,35 @@
          atv="26.5636011" 
          scale.mobile="0.2" 
          onclick="
-            set(hotspot[CartelBayahibe].enabled, false);  
+            set(hotspot[Boton-CartelBayahibe].enabled, false);  
+            set(hotspot[CartelBayahibe].enabled, false); 
+
             tween(hotspot[Boton-CartelBayahibe].alpha, 0, 1);  
-            tween(hotspot[Boton-CartelBayahibe].ath, -4.1752412, 1);  
             tween(hotspot[CartelBayahibe].alpha, 1, 1);  
-            set(hotspot[Boton-CartelBayahibe].visible,false);  
-            set(hotspot[CartelBayahibe].enabled, true);  
-            set(hotspot[CartelBayahibe].visible,true);
+
+            set(hotspot[Boton-CartelBayahibe].visible, false);  
+            set(hotspot[CartelBayahibe].visible, true);  
+
+            delayedcall(1, set(hotspot[CartelBayahibe].enabled, true)); 
         "/>
 
 		<hotspot name="CartelBayahibe" 
-				url="Carteles/CartelBayahibe.png" 
-				visible="false" 
-				ath="-6.1752412" 
-				atv="26.5636011" 
-				alpha="0"   
-				scale="0.8" 
-				scale.mobile="0.2" 
-				onclick="
-					tween(hotspot[CartelBayahibe].alpha, 0, 1);  
-					tween(hotspot[Boton-CartelBayahibe].alpha, 1, 1);  
-					tween(hotspot[Boton-CartelBayahibe].ath, -6.1752412, 1);
-					delayedcall(1, set(hotspot[CartelBayahibe].visible,false));  
-					set(hotspot[Boton-CartelBayahibe].visible,true); 
-				"/>
+         url="Carteles/CartelBayahibe.png" 
+         visible="false" 
+         ath="-6.1752412" 
+         atv="26.5636011" 
+         alpha="0"   
+         scale="0.8" 
+         scale.mobile="0.2" 
+         onclick="
+            set(hotspot[CartelBayahibe].enabled, false); 
+            tween(hotspot[CartelBayahibe].alpha, 0, 1); 
+            tween(hotspot[Boton-CartelBayahibe].alpha, 1, 1);  
 
-
-
+            delayedcall(1, set(hotspot[CartelBayahibe].visible, false));  
+            delayedcall(1, set(hotspot[Boton-CartelBayahibe].visible, true)); 
+            delayedcall(1, set(hotspot[Boton-CartelBayahibe].enabled, true)); 
+        "/>
 
 	</scene>
 
@@ -281,39 +285,45 @@
 			<cube url="panos/Cieba.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
 		</image>
 
-		<hotspot name="spot1" style="waves"  ath="-169.2708189" atv="4.1756912" linkedscene="scene_Cubanola" scale="0.25" zoom="true" />
+		<hotspot name="spot1" style="waves" ath="-176.0605745" atv="-0.2272191" linkedscene="scene_Cubanola" scale="0.25" zoom="true" />
+		<hotspot name="spot7" style="waves" ath="83.5138799" atv="3.0699849" linkedscene="scene_Rosa_de_Bayahibe" scale="0.25" zoom="true" />
 
-		<hotspot name="spot7" style="flyoutimage"
-				url="Carteles/CartelCeiba.png"
-				zorder="1"
-				ath="-12.3831709"
-				atv="6.2321492"
-				scale="0.4"
-				/>
+		<hotspot name="Boton-CartelCeiba" 
+         url="Carteles/Boton-CartelCeiba.png" 
+         scale="1" 
+         ath="-6.1752412" 
+         atv="26.5636011" 
+         scale.mobile="0.2" 
+         onclick="
+            set(hotspot[Boton-CartelCeiba].enabled, false);  
+            set(hotspot[CartelCeiba].enabled, false); 
 
-	</scene>
+            tween(hotspot[Boton-CartelCeiba].alpha, 0, 1);  
+            tween(hotspot[CartelCeiba].alpha, 1, 1);  
 
-	<scene name="scene_Copey" title="Copey" onstart="" thumburl="panos/Copey.tiles/thumb.jpg" lat="18.49293611" lng="-69.95813056" alt="12.79" heading="0.0">
-		
-		<control bouncinglimits="calc:image.cube ? true : false" />
+            set(hotspot[Boton-CartelCeiba].visible, false);  
+            set(hotspot[CartelCeiba].visible, true);  
 
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+            delayedcall(1, set(hotspot[CartelCeiba].enabled, true)); 
+        "/>
 
-		<preview url="panos/Copey.tiles/preview.jpg" />
+		<hotspot name="CartelCeiba" 
+         url="Carteles/CartelCeiba.png" 
+         visible="false" 
+         ath="-6.1752412" 
+         atv="26.5636011" 
+         alpha="0"   
+         scale="0.8" 
+         scale.mobile="0.2" 
+         onclick="
+            set(hotspot[CartelCeiba].enabled, false); 
+            tween(hotspot[CartelCeiba].alpha, 0, 1); 
+            tween(hotspot[Boton-CartelCeiba].alpha, 1, 1);  
 
-		<image prealign="0|0.0|0">
-			<cube url="panos/Copey.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
-		</image>
-
-		<hotspot name="spot3" style="waves"  ath="-169.2708189" atv="4.1756912" linkedscene="scene_Lengua_de_Buey" scale="0.25" zoom="true" />
-
-		<hotspot name="spot8" style="flyoutimage"
-				url="Carteles/CartelCopey.png"
-				zorder="1"
-				ath="-37.5274720"
-				atv="3.2317583"
-				scale="0.4"
-				/>
+            delayedcall(1, set(hotspot[CartelCeiba].visible, false));  
+            delayedcall(1, set(hotspot[Boton-CartelCeiba].visible, true)); 
+            delayedcall(1, set(hotspot[Boton-CartelCeiba].enabled, true)); 
+        "/>
 
 	</scene>
 
@@ -329,15 +339,99 @@
 			<cube url="panos/Cubanola.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
 		</image>
 
-		<hotspot name="spot2" style="waves"  ath="-169.2708189" atv="4.1756912" linkedscene="scene_Lengua_de_Buey" linkedscene_lookat="63.32488568,10.48618995,120.0" scale="0.25" zoom="true" />
+		<hotspot name="spot2" style="waves" ath="-53.0792536" atv="5.4372631" linkedscene="scene_Copey" scale="0.25" zoom="true" />
+		<hotspot name="spot8" style="waves" ath="146.4200347" atv="4.0236836" linkedscene="scene_Cieba" scale="0.25" zoom="true" />
 
-		<hotspot name="spot9" style="flyoutimage"
-				url="Carteles/CartelCubanola.png"
-				zorder="1"
-				ath="-1.2234610"
-				atv="21.3226290"
-				scale="0.4"
-				/>
+		<hotspot name="Boton-CartelCubanola" 
+         url="Carteles/Boton-CartelCubanola.png" 
+         scale="1" 
+         ath="-6.1752412" 
+         atv="26.5636011" 
+         scale.mobile="0.2" 
+         onclick="
+            set(hotspot[Boton-CartelCubanola].enabled, false);  
+            set(hotspot[CartelCubanola].enabled, false); 
+
+            tween(hotspot[Boton-CartelCubanola].alpha, 0, 1);  
+            tween(hotspot[CartelCubanola].alpha, 1, 1);  
+
+            set(hotspot[Boton-CartelCubanola].visible, false);  
+            set(hotspot[CartelCubanola].visible, true);  
+
+            delayedcall(1, set(hotspot[CartelCubanola].enabled, true)); 
+        "/>
+
+		<hotspot name="CartelCubanola" 
+         url="Carteles/CartelCubanola.png" 
+         visible="false" 
+         ath="-6.1752412" 
+         atv="26.5636011" 
+         alpha="0"   
+         scale="0.8" 
+         scale.mobile="0.2" 
+         onclick="
+            set(hotspot[CartelCubanola].enabled, false); 
+            tween(hotspot[CartelCubanola].alpha, 0, 1); 
+            tween(hotspot[Boton-CartelCubanola].alpha, 1, 1);  
+
+            delayedcall(1, set(hotspot[CartelCubanola].visible, false));  
+            delayedcall(1, set(hotspot[Boton-CartelCubanola].visible, true)); 
+            delayedcall(1, set(hotspot[Boton-CartelCubanola].enabled, true)); 
+        "/>
+
+	</scene>
+
+	<scene name="scene_Copey" title="Copey" onstart="" thumburl="panos/Copey.tiles/thumb.jpg" lat="18.49293611" lng="-69.95813056" alt="12.79" heading="0.0">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/Copey.tiles/preview.jpg" />
+
+		<image prealign="0|0.0|0">
+			<cube url="panos/Copey.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
+		</image>
+
+		<hotspot name="spot3" style="waves" ath="-110.0299969" atv="13.2692919" linkedscene="scene_Lengua_de_Buey" linkedscene_lookat="63.32488568,10.48618995,120.0" scale="0.25" zoom="true" />
+		<hotspot name="spot9" style="waves" ath="-159.8691518" atv="3.5462575" linkedscene="scene_Cubanola" scale="0.25" zoom="true" />
+
+		<hotspot name="Boton-CartelCopey" 
+         url="Carteles/Boton-CartelCopey.png" 
+         scale="1" 
+		 ath="-48.1340347" 
+		 atv="-0.9827969" 
+         scale.mobile="0.2" 
+         onclick="
+            set(hotspot[Boton-CartelCopey].enabled, false);  
+            set(hotspot[CartelCopey].enabled, false); 
+
+            tween(hotspot[Boton-CartelCopey].alpha, 0, 1);  
+            tween(hotspot[CartelCopey].alpha, 1, 1);  
+
+            set(hotspot[Boton-CartelCopey].visible, false);  
+            set(hotspot[CartelCopey].visible, true);  
+
+            delayedcall(1, set(hotspot[CartelCopey].enabled, true)); 
+        "/>
+
+		<hotspot name="CartelCopey" 
+         url="Carteles/CartelCopey.png" 
+         visible="false" 
+		 ath="-48.1340347" 
+		 atv="-0.9827969"
+         alpha="0"   
+         scale="0.8" 
+         scale.mobile="0.2" 
+         onclick="
+            set(hotspot[CartelCopey].enabled, false); 
+            tween(hotspot[CartelCopey].alpha, 0, 1); 
+            tween(hotspot[Boton-CartelCopey].alpha, 1, 1);  
+
+            delayedcall(1, set(hotspot[CartelCopey].visible, false));  
+            delayedcall(1, set(hotspot[Boton-CartelCopey].visible, true)); 
+            delayedcall(1, set(hotspot[Boton-CartelCopey].enabled, true)); 
+        "/>
 
 	</scene>
 
@@ -353,15 +447,45 @@
 			<cube url="panos/Lengua_de_Buey.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
 		</image>
 
-		<hotspot name="spot5" style="waves"  ath="-169.2708189" atv="4.1756912" linkedscene="scene_Rosa_de_Bayahibe" scale="0.25" zoom="true" />
+		<hotspot name="spot4" style="waves" ath="-123.3808728" atv="4.4483630" linkedscene="scene_Copey" scale="0.25" zoom="true" />
+		<hotspot name="spot5" style="waves" ath="-78.7407803" atv="3.3501743" linkedscene="scene_Rosa_de_Bayahibe" scale="0.25" zoom="true" />
 
-		<hotspot name="spot10" style="flyoutimage"
-				url="Carteles/CartelLenguaDeBuey.png"
-				zorder="1"
-				ath="64.4089450"
-				atv="17.5475832"
-				scale="0.4"
-				/>
+		<hotspot name="Boton-CartelLenguaDeBuey" 
+         url="Carteles/Boton-CartelLenguaDeBuey.png" 
+         scale="1" 
+		 ath="63.0272086" 
+		 atv="19.9280656"
+         scale.mobile="0.2" 
+         onclick="
+            set(hotspot[Boton-CartelLenguaDeBuey].enabled, false);  
+            set(hotspot[CartelLenguaDeBuey].enabled, false); 
+
+            tween(hotspot[Boton-CartelLenguaDeBuey].alpha, 0, 1);  
+            tween(hotspot[CartelLenguaDeBuey].alpha, 1, 1);  
+
+            set(hotspot[Boton-CartelLenguaDeBuey].visible, false);  
+            set(hotspot[CartelLenguaDeBuey].visible, true);  
+
+            delayedcall(1, set(hotspot[CartelLenguaDeBuey].enabled, true)); 
+        "/>
+
+		<hotspot name="CartelLenguaDeBuey" 
+         url="Carteles/CartelLenguaDeBuey.png" 
+         visible="false" 
+		 ath="63.0272086" 
+		 atv="19.9280656"
+         alpha="0"   
+         scale="0.8" 
+         scale.mobile="0.2" 
+         onclick="
+            set(hotspot[CartelLenguaDeBuey].enabled, false); 
+            tween(hotspot[CartelLenguaDeBuey].alpha, 0, 1); 
+            tween(hotspot[Boton-CartelLenguaDeBuey].alpha, 1, 1);  
+
+            delayedcall(1, set(hotspot[CartelLenguaDeBuey].visible, false));  
+            delayedcall(1, set(hotspot[Boton-CartelLenguaDeBuey].visible, true)); 
+            delayedcall(1, set(hotspot[Boton-CartelLenguaDeBuey].enabled, true)); 
+        "/>
 
 	</scene>
 
