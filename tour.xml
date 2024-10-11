@@ -172,7 +172,7 @@
 		</image>
 
 		<hotspot name="spot6" style="green_wave" ath="-96.0712749" atv="2.2675708" linkedscene="scene_Cieba" linkedscene_lookat="-11.54007634,1.84297115,120.0" scale="0.3" zoom="true" />
-		<hotspot name="spot10" style="red_wave" ath="83.6358899" atv="1.6884234" linkedscene="scene_Lengua_de_Buey" linkedscene_lookat="63.32488568,10.48618995,120.0" scale="0.3" zoom="true" />
+		<hotspot name="spot10" style="red_wave" ath="79.8861796" atv="5.2329770" linkedscene="scene_Lengua_de_Buey" linkedscene_lookat="63.32488568,10.48618995,120.0" scale="0.3" zoom="true" />
 		
 
 		<action name="ocultar">
