@@ -172,7 +172,7 @@
 		</image>
 
 		<hotspot name="spot6" style="green_wave" ath="-96.0712749" atv="2.2675708" linkedscene="scene_Cieba" linkedscene_lookat="-11.54007634,1.84297115,120.0" scale="0.3" zoom="true" />
-		<hotspot name="spot10" style="red_wave" ath="91.5019648" atv="4.6065987" linkedscene="scene_Lengua_de_Buey" linkedscene_lookat="63.32488568,10.48618995,120.0" scale="0.3" zoom="true" />
+		<hotspot name="spot10" style="red_wave" ath="83.6358899" atv="1.6884234" linkedscene="scene_Lengua_de_Buey" linkedscene_lookat="63.32488568,10.48618995,120.0" scale="0.3" zoom="true" />
 		
 
 		<action name="ocultar">
@@ -322,7 +322,7 @@
 		</image>
 
 		<hotspot name="spot2" style="green_wave" ath="-74.3084352" atv="2.8180868" linkedscene="scene_Copey" linkedscene_lookat="-4.51239536,-0.26562866,120.0" scale="0.4" zoom="true" />
-		<hotspot name="spot8" style="red_wave" ath="145.4024861" atv="3.4018558" linkedscene="scene_Cieba" linkedscene_lookat="-11.54007634,1.84297115,120.0" scale="0.35" zoom="true" />
+		<hotspot name="spot8" style="red_wave" ath="145.7173731" atv="1.0622489" linkedscene="scene_Cieba" linkedscene_lookat="-11.54007634,1.84297115,120.0" scale="0.35" zoom="true" />
 
 		<hotspot name="Boton-CartelCubanola" 
          url="Carteles/Boton-CartelCubanola.png" 
@@ -445,7 +445,7 @@
 			<cube url="panos/Lengua_de_Buey.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
 		</image>
 
-		<hotspot name="spot5" style="green_wave" ath="-78.4276392" atv="1.2705570" linkedscene="scene_Rosa_de_Bayahibe" linkedscene_lookat="-4.13769853,10.24463254,120.0" scale="0.45" zoom="true" />
+		<hotspot name="spot5" style="green_wave" ath="-78.1223572" atv="1.2463638" linkedscene="scene_Rosa_de_Bayahibe" linkedscene_lookat="-4.13769853,10.24463254,120.0" scale="0.45" zoom="true" />
 		<hotspot name="spot4" style="red_wave" ath="-120.3777185" atv="2.0827070" linkedscene="scene_Copey" linkedscene_lookat="-4.51239536,-0.26562866,120.0" scale="0.3" zoom="true" />
 		
 		<hotspot name="Boton-CartelLenguaDeBuey" 
