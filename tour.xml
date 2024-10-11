@@ -202,7 +202,7 @@
 
 		<hotspot name="Boton-CartelBayahibe" 
          url="Carteles/Boton-CartelBayahibe.png" 
-         scale="1" 
+         scale="0.8" 
          ath="-6.1752412" 
          atv="26.5636011" 
 		 rx="0" ry="0" rz="0"
@@ -232,7 +232,7 @@
 		 ox="0.0" oy="0.0"
 		 tx="0" ty="0" tz="0"
          alpha="0"   
-         scale="0.8" 
+         scale="0.65" 
 		 distorted="true"
          scale.mobile="0.2" 
          onclick="
@@ -264,7 +264,7 @@
 
 		<hotspot name="Boton-CartelCeiba" 
          url="Carteles/Boton-CartelCeiba.png" 
-         scale="1" 
+         scale="0.8" 
          ath="-6.1752412" 
          atv="26.5636011" 
 		 rx="0" ry="0" rz="0"
@@ -294,7 +294,7 @@
 		 ox="0.0" oy="0.0"
 		 tx="0" ty="0" tz="0"
          alpha="0"   
-         scale="0.8" 
+         scale="0.65" 
 		 distorted="true"
          scale.mobile="0.2" 
          onclick="
@@ -326,7 +326,7 @@
 
 		<hotspot name="Boton-CartelCubanola" 
          url="Carteles/Boton-CartelCubanola.png" 
-         scale="1" 
+         scale="0.8" 
          ath="-6.1752412" 
          atv="26.5636011" 
 		 rx="0" ry="0" rz="0"
@@ -357,7 +357,7 @@
 		 tx="0" ty="0" tz="0"
 		 distorted="true"
          alpha="0"   
-         scale="0.8" 
+         scale="0.65" 
          scale.mobile="0.2" 
          onclick="
             set(hotspot[CartelCubanola].enabled, false); 
@@ -388,7 +388,7 @@
 
 		<hotspot name="Boton-CartelCopey" 
          url="Carteles/Boton-CartelCopey.png" 
-         scale="1" 
+         scale="0.8" 
 		 ath="-48.1340347" 
 		 atv="-0.9827969" 
 		 rx="0" ry="0" rz="0"
@@ -419,7 +419,7 @@
 		 tx="0" ty="0" tz="0"
 		 distorted="true"
          alpha="0"   
-         scale="0.8" 
+         scale="0.65" 
          scale.mobile="0.2" 
          onclick="
             set(hotspot[CartelCopey].enabled, false); 
@@ -450,7 +450,7 @@
 		
 		<hotspot name="Boton-CartelLenguaDeBuey" 
          url="Carteles/Boton-CartelLenguaDeBuey.png" 
-         scale="1" 
+         scale="0.8" 
 		 ath="63.0272086" 
 		 atv="19.9280656"
 		 rx="0" ry="0" rz="0"
@@ -481,7 +481,7 @@
 		 tx="0" ty="0" tz="0"
 		 distorted="true"
          alpha="0"   
-         scale="0.8" 
+         scale="0.65" 
          scale.mobile="0.2" 
          onclick="
             set(hotspot[CartelLenguaDeBuey].enabled, false); 
