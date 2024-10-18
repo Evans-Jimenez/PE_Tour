@@ -61,6 +61,7 @@
 		set(hotspot[Instrucciones].visible, false);
 		set(hotspot[Boton-CartelBayahibe].visible, false);
 		set(hotspot[nadirlogo].visible, false);
+		set(hotspot[show_model].visible, false);
 		delayedcall(2,
 		tween(layer[intro_logo].alpha, 1);
 		tween(layer[intro_guide].alpha, 1);
@@ -193,6 +194,7 @@
 			set(hotspot[Bienvenido].enabled, false);
 			set(hotspot[spot6].visible, true);
 			set(hotspot[spot10].visible, true);
+			set(hotspot[show_model].visible, true);
 			set(hotspot[Creditos].keep, true);
 			set(hotspot[Bienvenido].keep, true);
 			set(hotspot[Boton-CartelBayahibe].visible, true)
@@ -287,7 +289,7 @@
 		<control bouncinglimits="true" />
 		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120.0" maxpixelzoom="2.0" fovmin="64.363265" fovmax="140.0" limitview="auto" hlookatmin="-180.0" hlookatmax="180.0" vlookatmin="-90.0" vlookatmax="90.0"/>
 
-		<hotspot name="show_model" style="green_wave" ath="-8.4624571" atv="-2.6421605" scale="1.30000000000000" depth="1137.20000000000005" onclick="toggle_3dmodel()" />
+		<hotspot name="show_model" style="lupa" ath="-8.07240946516174" atv="-3.82397768959558" scale="0.50000000000000" depth="4000.00000000000000" onclick="toggle_3dmodel()" />
 
 	</scene>
 
