@@ -269,6 +269,26 @@
             delayedcall(1, set(hotspot[Boton-CartelBayahibe].enabled, true)); 
         "/>
 
+		<layer name="model_container" type="container" keep="false" bgcolor="0x000000" zorder="0" enabled="true" visible="false" bgcapture="true" vr="true" width="90%" height="67.5%" align="center">
+			<layer name="threejs_container" iframeurl="https://acrosszawarudo.github.io/PE_Recursos3D/viewer.html?model=FlorDeBayahibe" type="iframe" vr="true" align="center" width="100%" height="100%" visible="false" fillcolor="0xffffff" />
+			<layer name="close_3dmodel" onclick='toggle_3dmodel()' url="recursos/botoncerrar.png" keep="true" enabled="true" align="leftbottom" x="10" y="5" scale="0.4" scale.mobile="0.2"/>
+		</layer>
+		
+		<action name="toggle_3dmodel">
+			if(layer[threejs_container].visible == true,
+				set(layer[threejs_container].visible, false);
+				set(layer[model_container].visible, false);
+			,
+				set(layer[threejs_container].visible, true);
+				set(layer[model_container].visible, true);
+			);
+		</action>
+
+		<control bouncinglimits="true" />
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120.0" maxpixelzoom="2.0" fovmin="64.363265" fovmax="140.0" limitview="auto" hlookatmin="-180.0" hlookatmax="180.0" vlookatmin="-90.0" vlookatmax="90.0"/>
+
+		<hotspot name="show_model" style="green_wave" ath="-8.4624571" atv="-2.6421605" scale="1.30000000000000" depth="1137.20000000000005" onclick="toggle_3dmodel()" />
+
 	</scene>
 
 	<scene name="scene_Ceiba" title="Ceiba" onstart="" thumburl="panos/Ceiba.tiles/thumb.jpg" lat="18.49167778" lng="-69.95795278" alt="20.25" heading="0.0">
