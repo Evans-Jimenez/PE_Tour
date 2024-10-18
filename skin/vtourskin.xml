@@ -317,7 +317,7 @@
 		   onloaded="do_crop_animation(128,128, 15);"
 	       />
 
-	<style name="lupa" url="lupa.png" edge="top" distorted="true"
+	<style name="bayahibe" url="bayahibe.png" edge="top" distorted="true"
 	       tooltip=""
 	       linkedscene=""
 	       linkedscene_lookat=""

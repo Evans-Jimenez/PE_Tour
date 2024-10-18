@@ -289,7 +289,7 @@
 		<control bouncinglimits="true" />
 		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120.0" maxpixelzoom="2.0" fovmin="64.363265" fovmax="140.0" limitview="auto" hlookatmin="-180.0" hlookatmax="180.0" vlookatmin="-90.0" vlookatmax="90.0"/>
 
-		<hotspot name="show_model" style="lupa" ath="-8.07240946516174" atv="-3.82397768959558" scale="0.50000000000000" depth="4000.00000000000000" onclick="toggle_3dmodel()" />
+		<hotspot name="show_model" style="bayahibe" ath="-8.07240946516174" atv="-3.82397768959558" scale="0.50000000000000" depth="4000.00000000000000" onclick="toggle_3dmodel()" />
 
 	</scene>
 
@@ -495,7 +495,7 @@
 		<control bouncinglimits="true" />
 		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120.0" maxpixelzoom="2.0" fovmin="64.363265" fovmax="140.0" limitview="auto" hlookatmin="-180.0" hlookatmax="180.0" vlookatmin="-90.0" vlookatmax="90.0"/>
 
-		<hotspot name="show_model" style="lupa" ath="4.1745836" atv="-5.9370745" scale="0.50000000000000" depth="4000.00000000000000" onclick="toggle_3dmodel()" />
+		<hotspot name="show_model" style="bayahibe" ath="4.1745836" atv="-5.9370745" scale="0.50000000000000" depth="4000.00000000000000" onclick="toggle_3dmodel()" />
 
 	</scene>
 
