@@ -3,6 +3,8 @@
 	<include url="skin/vtourskin.xml" />
 	<plugin nam="toolbox" url="plugins/toolbox/toolboxV2.js" keep="true" preload="true"/>
 
+	<plugin api="threejs" url="%VIEWER%/plugins/threejs_krpanoplugin_opensource.js" />
+
 	<layer name="intro"
 		type="container"
 		keep="true"
@@ -174,9 +176,8 @@
 		</image>
 
 		<hotspot name="spot6" style="green_wave" ath="-96.0712749" atv="2.2675708" linkedscene="scene_Ceiba" linkedscene_lookat="-11.54007634,1.84297115,120.0" zoom="true" />
-		<hotspot name="spot10" style="red_wave" ath="91.0993935" atv="6.7280450" linkedscene="scene_Lengua_de_Buey" linkedscene_lookat="63.32488568,10.48618995,120.0" zoom="true" />
+		<!-- <hotspot name="spot10" style="red_wave" ath="91.0993935" atv="6.7280450" linkedscene="scene_Lengua_de_Buey" linkedscene_lookat="63.32488568,10.48618995,120.0" zoom="true" /> -->
 		
-
 		<action name="ocultar1">
 			tween(hotspot[Bienvenido].alpha, 0.0, 1.5);
 			tween(hotspot[Creditos].alpha, 0.0, 1.5);
@@ -508,7 +509,7 @@
 			<cube url="panos/Lengua_de_Buey.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
 		</image>
 
-		<hotspot name="spot5" style="green_wave" ath="-45.06158166593463" atv="1.29845503602680" scale="0.50000000000000" depth="1000" linkedscene="scene_Rosa_de_Bayahibe" linkedscene_lookat="-4.13769853,10.24463254,120.0" zoom="true" />
+		<!-- <hotspot name="spot5" style="green_wave" ath="-45.06158166593463" atv="1.29845503602680" scale="0.50000000000000" depth="1000" linkedscene="scene_Rosa_de_Bayahibe" linkedscene_lookat="-4.13769853,10.24463254,120.0" zoom="true" /> -->
 		<hotspot name="spot4" style="red_wave" ath="153.84947920151211" atv="4.69263501048775" scale="0.50000000000000" depth="1000" linkedscene="scene_Copey" linkedscene_lookat="-4.51239536,-0.26562866,120.0" zoom="true" />
 		
 		<hotspot name="Boton-CartelLenguaDeBuey" 
