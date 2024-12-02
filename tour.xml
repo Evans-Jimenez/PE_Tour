@@ -72,7 +72,7 @@
 
 	<action name="toggle_hotspot_visibility">
 
-		if(devices.vr, set(hotspot[show_model].visible, false));		
+		if(devices.pc, set(hotspot[show_model].visible, false));		
 	</action>
 
 	<action name="on_intro_click">
