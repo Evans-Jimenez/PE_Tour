@@ -72,7 +72,8 @@
 
 	<action name="toggle_hotspot_visibility">
 
-		if(devices.pc, set(hotspot[show_model].visible, false));		
+		if(devices.pc, set(style[bayahive].visible, false));	
+		if(devices.pc, set(style[copey].visible, false));	
 	</action>
 
 	<action name="on_intro_click">
