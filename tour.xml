@@ -1,4 +1,4 @@
-﻿<krpano version="1.21" title="Virtual Tour">
+﻿<krpano version="1.21" title="Virtual Tour" onloaded="toggle_hotspot_visibility();">
 
 	<include url="skin/vtourskin.xml" />
 	<plugin nam="toolbox" url="plugins/toolbox/toolboxV2.js" keep="true" preload="true"/>
@@ -68,6 +68,11 @@
 		tween(layer[intro_logo].alpha, 1);
 		tween(layer[intro_guide].alpha, 1);
 		);
+	</action>
+
+	<action name="toggle_hotspot_visibility">
+
+		if(devices.vr, set(hotspot[show_model].visible, false));		
 	</action>
 
 	<action name="on_intro_click">
